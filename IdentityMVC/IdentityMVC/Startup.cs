@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using IdentityMVC.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using IdentityMVC.Seeder;
 
 namespace IdentityMVC
 {
@@ -27,6 +28,7 @@ namespace IdentityMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //This customizes the cookie for Identity
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -37,6 +39,9 @@ namespace IdentityMVC
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+
+            //REQUIRED: to use Identity
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
@@ -44,12 +49,13 @@ namespace IdentityMVC
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext db)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+                DBInitializer.InitializeData(db);
             }
             else
             {
@@ -61,6 +67,7 @@ namespace IdentityMVC
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            //REQUIRED: enables Identity
             app.UseAuthentication();
 
             app.UseMvc(routes =>
