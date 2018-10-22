@@ -39,27 +39,27 @@ namespace IdentityMVC.Seeder
             {
                 new IdentityUser()
                 {
-                    UserName = "snake",
+                    UserName = "snake@Develop.com",
                     Email = "snake@Develop.com",
                     NormalizedEmail = "SNAKE@DEVELOP.COM",
-                    NormalizedUserName = "SNAKE",
+                    NormalizedUserName = "SNAKE@DEVELOP.COM",
                     SecurityStamp = Guid.NewGuid().ToString(),
                     LockoutEnabled = true,
                 },
                 new IdentityUser()
                 {
-                    UserName = "ocelot",
+                    UserName = "ocelot@Develop.com",
                     Email = "ocelot@Develop.com",
                     NormalizedEmail = "OCELOT@DEVELOP.COM",
-                    NormalizedUserName = "OCELOT",
+                    NormalizedUserName = "OCELOT@DEVELOP.COM",
                     SecurityStamp = Guid.NewGuid().ToString()
                 },
                 new IdentityUser()
                 {
-                    UserName = "liquid",
+                    UserName = "liquid@Develop.com",
                     Email = "liquid@Develop.com",
                     NormalizedEmail = "LIQUID@DEVELOP.COM",
-                    NormalizedUserName = "LIQUID",
+                    NormalizedUserName = "LIQUID@DEVELOP.COM",
                     SecurityStamp = Guid.NewGuid().ToString(),
                 },
             });
@@ -70,17 +70,17 @@ namespace IdentityMVC.Seeder
                 new IdentityUserRole<string>()
                 {
                     RoleId = roles.Find(x => x.Name == "Charlie").Id,
-                    UserId = users.Find(x => x.UserName == "ocelot").Id
+                    UserId = users.Find(x => x.UserName == "ocelot@Develop.com").Id
                 },
                 new IdentityUserRole<string>()
                 {
                     RoleId = roles.Find(x => x.Name == "Beta").Id,
-                    UserId = users.Find(x => x.UserName == "liquid").Id
+                    UserId = users.Find(x => x.UserName == "liquid@Develop.com").Id
                 },
                 new IdentityUserRole<string>()
                 {
                     RoleId = roles.Find(x => x.Name == "Alpha").Id,
-                    UserId = users.Find(x => x.UserName == "snake").Id
+                    UserId = users.Find(x => x.UserName == "snake@Develop.com").Id
                 },
             };
 
