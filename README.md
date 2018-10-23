@@ -1,3 +1,10 @@
+# Useful links
+* [Start here for Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-2.1&tabs=visual-studio)
+* [Scaffold Identity into a new Project](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-2.1&tabs=visual-studio)
+* [Configure Identity Password and Cookies](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-configuration?view=aspnetcore-2.1)
+* [ALL of Identity Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore?view=aspnetcore-1.1)
+
+
 # Add Identity to a Project
 ## Packages Required for Identity
 `Microsoft.AspNetCore.Identity.EntityFrameworkCore`
@@ -112,8 +119,3 @@ RoleManger = > https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.
 
 
 
-# Useful links
-* [Start here for Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-2.1&tabs=visual-studio)
-* [Scaffold Identity into a new Project](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-2.1&tabs=visual-studio)
-* [Configure Identity Password and Cookies](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-configuration?view=aspnetcore-2.1)
-* [ALL of Identity Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore?view=aspnetcore-1.1)
