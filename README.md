@@ -26,7 +26,7 @@ Identity uses, these tables are:
 
 The ones in bold are the only ones I've ever had to deal with.
 
-#The Tables
+# The Tables
 
 ## AspNetUser
 
