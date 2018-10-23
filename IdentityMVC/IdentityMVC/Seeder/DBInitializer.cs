@@ -26,8 +26,8 @@ namespace IdentityMVC.Seeder
 
         public static void ClearData(ApplicationDbContext context)
         {
-            context.Database.ExecuteSqlCommand("DELETE FROM [dbo].[AspNetUsers]");
-            context.Database.ExecuteSqlCommand("DELETE FROM [dbo].[AspNetRoles]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [MG].[User]");
+            context.Database.ExecuteSqlCommand("DELETE FROM [MG].[AspNetRoles]");
         }
 
         private static void SeedData(ApplicationDbContext context)

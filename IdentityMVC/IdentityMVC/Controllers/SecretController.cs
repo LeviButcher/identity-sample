@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using IdentityMVC.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,12 +13,12 @@ namespace IdentityMVC.Controllers
 
     public class SecretController : Controller
     {
-        public SignInManager<IdentityUser> SignIn { get; }
-        public UserManager<IdentityUser> UserManager { get; }
+        public SignInManager<User> SignIn { get; }
+        public UserManager<User> UserManager { get; }
         public RoleManager<IdentityRole> RoleManager { get; }
         public ILogger Logger { get; }
 
-        public SecretController(SignInManager<IdentityUser> signIn, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, ILogger<SecretController> logger)
+        public SecretController(SignInManager<User> signIn, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, ILogger<SecretController> logger)
         {
             SignIn = signIn;
             UserManager = userManager;
@@ -36,6 +38,12 @@ namespace IdentityMVC.Controllers
                 Logger.LogDebug("User is in Beta Role");
             }
 
+            return View();
+        }
+
+        [Authorize(Roles = "Alpha")]
+        public IActionResult Patriot()
+        {
             return View();
         }
     }

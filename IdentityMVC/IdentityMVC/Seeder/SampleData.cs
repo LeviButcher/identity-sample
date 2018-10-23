@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using IdentityMVC.Models;
 
 namespace IdentityMVC.Seeder
 {
@@ -34,10 +35,10 @@ namespace IdentityMVC.Seeder
         };
 
 
-        public static IEnumerable<IdentityUser> GetUsers()
-            => SetPasswords(new List<IdentityUser>()
+        public static IEnumerable<User> GetUsers()
+            => SetPasswords(new List<User>()    
             {
-                new IdentityUser()
+                new User()
                 {
                     UserName = "snake@Develop.com",
                     Email = "snake@Develop.com",
@@ -46,7 +47,7 @@ namespace IdentityMVC.Seeder
                     SecurityStamp = Guid.NewGuid().ToString(),
                     LockoutEnabled = true,
                 },
-                new IdentityUser()
+                new User()
                 {
                     UserName = "ocelot@Develop.com",
                     Email = "ocelot@Develop.com",
@@ -54,7 +55,7 @@ namespace IdentityMVC.Seeder
                     NormalizedUserName = "OCELOT@DEVELOP.COM",
                     SecurityStamp = Guid.NewGuid().ToString()
                 },
-                new IdentityUser()
+                new User()
                 {
                     UserName = "liquid@Develop.com",
                     Email = "liquid@Develop.com",
@@ -64,7 +65,7 @@ namespace IdentityMVC.Seeder
                 },
             });
 
-        public static IEnumerable<IdentityUserRole<string>> GetUserRole(List<IdentityRole> roles, List<IdentityUser> users)
+        public static IEnumerable<IdentityUserRole<string>> GetUserRole(List<IdentityRole> roles, List<User> users)
             => new List<IdentityUserRole<string>>()
             {
                 new IdentityUserRole<string>()
@@ -84,9 +85,9 @@ namespace IdentityMVC.Seeder
                 },
             };
 
-        private static IEnumerable<IdentityUser> SetPasswords(List<IdentityUser> users)
+        private static IEnumerable<User> SetPasswords(List<User> users)
         {
-            PasswordHasher<IdentityUser> passwordHasher = new PasswordHasher<IdentityUser>();
+            PasswordHasher<User> passwordHasher = new PasswordHasher<User>();
 
             foreach (var employee in users)
             {

@@ -8,6 +8,9 @@ using IdentityMVC.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using IdentityMVC.Seeder;
+using IdentityMVC.Models;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using IdentityMVC.Services;
 
 namespace IdentityMVC
 {
@@ -40,7 +43,7 @@ namespace IdentityMVC
             //services.AddDefaultIdentity<IdentityUser>()
             //    .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
@@ -59,8 +62,7 @@ namespace IdentityMVC
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
 
-
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSingleton<IEmailSender, EmailSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
