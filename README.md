@@ -1,3 +1,10 @@
+# Useful links
+* [Start here for Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-2.1&tabs=visual-studio)
+* [Scaffold Identity into a new Project](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-2.1&tabs=visual-studio)
+* [Configure Identity Password and Cookies](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-configuration?view=aspnetcore-2.1)
+* [ALL of Identity Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore?view=aspnetcore-1.1)
+
+
 # Add Identity to a Project
 ## Packages Required for Identity
 `Microsoft.AspNetCore.Identity.EntityFrameworkCore`
@@ -26,7 +33,7 @@ Identity uses, these tables are:
 
 The ones in bold are the only ones I've ever had to deal with.
 
-#The Tables
+# The Tables
 
 ## AspNetUser
 
@@ -64,8 +71,8 @@ That should be all you need to get started. For more info on the other tables. g
 
 ## I hate the name of these Tables
 
-You can give them a new name if you want. Just extend that tables class and
-give it a decoration. Look within models for a example.
+You can give them a new name if you want. You have to use Fluent API in order to do this.
+Take a look at the 'ApplicationDbContext onModelBuilder' method for an example.
 
 # Gotchas
 
@@ -112,5 +119,3 @@ RoleManger = > https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.
 
 
 
-# Useful links
-https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-2.1&tabs=visual-studio
